@@ -1,6 +1,6 @@
 package cetys.edu.bathrat.DAO.entidades;
 
-import cetys.edu.bathrat.DAO.repositories.restroomRepository;
+import cetys.edu.bathrat.DAO.repositories.RestroomRepository;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "rating", schema = "public")
-public class ratingEntity {
+public class RatingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rating_id")
@@ -35,7 +35,7 @@ public class ratingEntity {
 
     @ManyToOne
     @JoinColumn(name = "restroom_id")
-    private restroomEntity restroom;
+    private RestroomEntity restroom;
 
     // Getter para ratingId
     public int getRatingId() {
@@ -98,12 +98,12 @@ public class ratingEntity {
     }
 
     // Getter para restroom
-    public restroomEntity getRestroom() {
+    public RestroomEntity getRestroom() {
         return restroom;
     }
 
     // Setter para restroom
-    public void setRestroom(restroomEntity restroom) {
+    public void setRestroom(RestroomEntity restroom) {
         this.restroom = restroom;
     }
 }
